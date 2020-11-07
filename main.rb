@@ -3,6 +3,7 @@
 require 'nokogiri'
 require 'httparty'
 require 'open-uri'
+require 'sinatra'
 
 def fetch(url)
   Nokogiri::HTML(URI.open(url))
@@ -51,10 +52,19 @@ end
 
 url = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=iphone+11&_sacat=0'
 
-doc = scraper(url)
+# doc = scraper(url)
 
-puts doc.count
+# puts doc.count
 
-gets
+# gets
 
-display_product(doc)
+# display_product(doc)
+
+# routes
+get '/' do
+    erb :index
+end
+
+post '/search' do
+    erb :search_result
+end
