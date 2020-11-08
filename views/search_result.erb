@@ -22,22 +22,34 @@
                     <div class="card py-2">
                         <div class="row no-gutters">
                             <div class="col-4 img-container">
-                                <img src="https://i.ebayimg.com/thumbs/images/g/t5MAAOSwonZfnaWq/s-l225.webp"
+                                <img src="<%= product.at_css('.s-item__image-section .s-item__image-img')['src'] %>"
                                     alt="product image">
                             </div>
                             <div class="col-8">
                                 <div class="card-body py-1">
-                                    <h5 class="card-title"><%=product.at_css('.s-item__title').text%></h5>
-                                    <p class="card-text text-muted">Refurbished</p>
+                                    <h5 class="card-title"><%= product.at_css('.s-item__info .s-item__title').text %></h5>
+                                    <p class="card-text text-muted"><%= product.at_css('.s-item__info .SECONDARY_INFO').text %></p>
                                     <div class="row mt-2">
                                         <div class="col-6">
-                                            <p class="card-text price"><strong>$530.30</strong></p>
-                                            <p class="card-text text-muted">14bids</p>
-                                            <p class="card-text text-muted">+$50.00 shipping</p>
+                                            <p class="card-text price"><strong><%= product.at_css('.s-item__price').text%></strong></p>
+                                            <p class="card-text text-muted">
+                                                <% if product.at_css('.s-item__info .s-item__bidCount') %>
+                                                    <%= product.at_css('.s-item__info .s-item__bidCount').text %>
+                                                <% end %>
+                                            </p>
+                                            <p class="card-text text-muted">
+                                                <%= product.at_css('.s-item__info .s-item__shipping').text    %>
+                                            </p>
                                         </div>
                                         <div class="col-6">
-                                            <p class="card-text text-muted">2d 8h left</p>
-                                            <p class="card-text text-muted">From US</p>
+                                            <p class="card-text text-muted">
+                                                <% if product.at_css('.s-item__info .s-item__time-left') %>
+                                                    <%= product.at_css('.s-item__info .s-item__time-left').text %>
+                                                <% end %>
+                                            </p>
+                                            <p class="card-text text-muted">
+                                                <%= product.at_css('.s-item__info .s-item__location').text %>
+                                            </p>
                                         </div>
                                     </div>
                                     <a href="#" class="btn btn-primary mt-3">Display</a>

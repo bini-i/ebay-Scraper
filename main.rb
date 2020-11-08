@@ -12,7 +12,7 @@ end
 def scraper(url)
   doc = fetch(url)
 
-  doc.css('#mainContent #srp-river-results .s-item__info')
+  doc.css('#mainContent #srp-river-results .s-item')
 end
 
 def display_product(doc)
