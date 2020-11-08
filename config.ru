@@ -1,0 +1,3 @@
+require './main'
+
+run App
