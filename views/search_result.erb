@@ -17,58 +17,36 @@
             <%# Main content --- Start here --- %>
             <div class="s-result col-8">
                 <h1>Best Deals</h1>
-                <div class="card py-2">
-                    <div class="row no-gutters">
-                        <div class="col-4 img-container">
-                            <img src="https://i.ebayimg.com/thumbs/images/g/t5MAAOSwonZfnaWq/s-l225.webp"
-                                alt="product image">
-                        </div>
-                        <div class="col-8">
-                            <div class="card-body py-1">
-                                <h5 class="card-title">Apple iPhone 11 - 64GB - Black (Locked)</h5>
-                                <p class="card-text text-muted">Refurbished</p>
-                                <div class="row mt-2">
-                                    <div class="col-6">
-                                        <p class="card-text price"><strong>$530.30</strong></p>
-                                        <p class="card-text text-muted">14bids</p>
-                                        <p class="card-text text-muted">+$50.00 shipping</p>
+                <%# Card content --- Start here --- %>
+                <%@products.each do |product|%>
+                    <div class="card py-2">
+                        <div class="row no-gutters">
+                            <div class="col-4 img-container">
+                                <img src="https://i.ebayimg.com/thumbs/images/g/t5MAAOSwonZfnaWq/s-l225.webp"
+                                    alt="product image">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body py-1">
+                                    <h5 class="card-title"><%=product.at_css('.s-item__title').text%></h5>
+                                    <p class="card-text text-muted">Refurbished</p>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <p class="card-text price"><strong>$530.30</strong></p>
+                                            <p class="card-text text-muted">14bids</p>
+                                            <p class="card-text text-muted">+$50.00 shipping</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="card-text text-muted">2d 8h left</p>
+                                            <p class="card-text text-muted">From US</p>
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <p class="card-text text-muted">2d 8h left</p>
-                                        <p class="card-text text-muted">From US</p>
-                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3">Display</a>
                                 </div>
-                                <a href="#" class="btn btn-primary mt-3">Display</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card py-2">
-                    <div class="row no-gutters">
-                        <div class="col-4 img-container">
-                            <img src="https://i.ebayimg.com/thumbs/images/g/t5MAAOSwonZfnaWq/s-l225.webp"
-                                alt="product image" class="">
-                        </div>
-                        <div class="col-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Apple iPhone 11 - 64GB - Black (Locked)</h5>
-                                <p class="card-text text-muted">Refurbished</p>
-                                <div class="row mt-2">
-                                    <div class="col-6">
-                                        <p class="card-text price"><strong>$530.30</strong></p>
-                                        <p class="card-text text-muted">14bids</p>
-                                        <p class="card-text text-muted">+$50.00 shipping</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="card-text text-muted">2d 8h left</p>
-                                        <p class="card-text text-muted">From US</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="btn btn-primary mt-3">Display</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <%end%>
+                <%# Card content --- End here --- %>
             </div>
             <%# Main content --- End here --- %>
             <div class="col-2">

@@ -66,5 +66,6 @@ get '/' do
 end
 
 post '/search' do
+    @products = scraper(url)
     erb :search_result
 end
