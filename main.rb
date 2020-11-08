@@ -15,8 +15,8 @@ def scraper(url)
   doc.css('#mainContent #srp-river-results .s-item')
 end
 
-url_left = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw='
-url_right = '&_sacat=0'
+base_url_left = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw='
+base_url_right = '&_sacat=0'
 
 # routes
 get '/' do
@@ -27,7 +27,7 @@ post '/search' do
     product_name = params['product_name']
     arr = product_name.split()
     product_name = arr.join('+')
-    url = url_left + product_name + url_right
+    url = base_url_left + product_name + base_url_right
     @products = scraper(url)
     erb :search_result
 end
