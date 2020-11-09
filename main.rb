@@ -2,32 +2,23 @@ require 'nokogiri'
 require 'httparty'
 require 'open-uri'
 require 'sinatra'
-
-def fetch(url)
-  Nokogiri::HTML(URI.open(url))
-end
-
-def scraper(url)
-  doc = fetch(url)
-
-  doc.css('#mainContent #srp-river-results .s-item')
-end
-
+require_relative './lib/scraper'
 
 # routes
 class App < Sinatra::Base
-    get '/' do
-        erb :index
-    end
+  get '/' do
+    erb :index
+  end
+
+  post '/search' do
+    base_url_left = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw='
+    base_url_right = '&_sacat=0'
+    sc = Scraper.new(base_url_left, base_url_right)
+
+    product_name = params['product_name']
+    url = sc.url_constructor(product_name)
     
-    post '/search' do
-        base_url_left = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw='
-        base_url_right = '&_sacat=0'
-        product_name = params['product_name']
-        arr = product_name.split()
-        product_name = arr.join('+')
-        url = base_url_left + product_name + base_url_right
-        @products = scraper(url)
-        erb :search_result
-    end
+    @products = sc.scrape(url)
+    erb :search_result
+  end
 end

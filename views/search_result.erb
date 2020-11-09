@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Deals</title>
+    <title>bayhunt</title>
     <link rel="stylesheet" type="text/css" href="<%=url('stylesheets/styles.css')%>">
+    <script src="https://kit.fontawesome.com/2bce053742.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,85 +17,90 @@
             </div>
             <%# Main content --- Start here --- %>
             <div class="s-result col-sm-8">
-                <h1>Best Deals</h1>
+                <form method="POST" action="/search" class="form-inline mt-3">
+                    <div class="form-group mb-0">
+                        <input id="product_name" name="product_name" class="form-control" type="text"
+                            placeholder="Search for products here" value="<%= params['product_name'] || ""%>">
+                    </div>
+                    <input class="btn btn-lg btn-primary" type="submit" value="Search">
+                </form>
                 <%# Card content --- Start here --- %>
                 <%@products.each do |product|%>
-                    <div class="card py-2">
-                        <div class="row no-gutters">
-                            <div class="col-sm-4 img-container">
-                                <%# product image%>
-                                <img src="
+                <div class="card py-2">
+                    <div class="row no-gutters">
+                        <div class="col-sm-4 img-container">
+                            <%# product image%>
+                            <img src="
                                 <% if product.at_css('.s-item__image-section .s-item__image-img')%>
                                     <%= product.at_css('.s-item__image-section .s-item__image-img')['src'] %>
                                 <% end %>
-                                "
-                                    alt="product image">
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="card-body py-1">
-                                    <%# product title %>
-                                    <h5 class="card-title">
+                                " alt="product image">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body py-1">
+                                <%# product title %>
+                                <h5 class="card-title">
                                     <% if product.at_css('.s-item__info .s-item__title') %>
-                                        <%= product.at_css('.s-item__info .s-item__title').text %>
+                                    <%= product.at_css('.s-item__info .s-item__title').text %>
                                     <% end %>
-                                    </h5>
-                                    <%# product condition %>
-                                    <p class="card-text text-muted">
-                                        <% if product.at_css('.s-item__info .SECONDARY_INFO') %>
-                                            <small>
-                                                <%= product.at_css('.s-item__info .SECONDARY_INFO').text %>
-                                            </small>
-                                        <% end %>
-                                    </p>
-                                    <div class="row mt-2">
-                                        <div class="col-6">
-                                            <%# product price %>
-                                            <p class="card-text price"><strong>
-                                            <% if product.at_css('.s-item__price') %>
+                                </h5>
+                                <%# product condition %>
+                                <p class="card-text text-muted">
+                                    <% if product.at_css('.s-item__info .SECONDARY_INFO') %>
+                                    <small>
+                                        <%= product.at_css('.s-item__info .SECONDARY_INFO').text %>
+                                    </small>
+                                    <% end %>
+                                </p>
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <%# product price %>
+                                        <p class="card-text price"><strong>
+                                                <% if product.at_css('.s-item__price') %>
                                                 <%= product.at_css('.s-item__price').text%>
-                                            <% end %>
-                                            </strong></p>
-                                            <%# bid count %>
-                                            <p class="card-text text-muted">
-                                                <% if product.at_css('.s-item__info .s-item__bidCount') %>
-                                                    <small>
-                                                        <%= product.at_css('.s-item__info .s-item__bidCount').text %>
-                                                    </small>
                                                 <% end %>
-                                            </p>
-                                            <p class="card-text text-muted">
+                                            </strong></p>
+                                        <%# bid count %>
+                                        <p class="card-text text-muted">
+                                            <% if product.at_css('.s-item__info .s-item__bidCount') %>
+                                            <small>
+                                                <%= product.at_css('.s-item__info .s-item__bidCount').text %>
+                                            </small>
+                                            <% end %>
+                                        </p>
+                                        <p class="card-text text-muted">
                                             <%# shipping cost %>
                                             <% if product.at_css('.s-item__info .s-item__shipping') %>
-                                                <small>
-                                                    <%= product.at_css('.s-item__info .s-item__shipping').text %>
-                                                </small>
+                                            <small>
+                                                <%= product.at_css('.s-item__info .s-item__shipping').text %>
+                                            </small>
                                             <% end %>
-                                            </p>
-                                        </div>
-                                        <div class="col-6">
-                                            <p class="card-text text-muted">
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text text-muted">
                                             <%# bidding time left%>
-                                                <% if product.at_css('.s-item__info .s-item__time-left') %>
-                                                    <small>
-                                                        <%= product.at_css('.s-item__info .s-item__time-left').text %>
-                                                    </small>
-                                                <% end %>
-                                            </p>
-                                            <p class="card-text text-muted">
+                                            <% if product.at_css('.s-item__info .s-item__time-left') %>
+                                            <small>
+                                                <%= product.at_css('.s-item__info .s-item__time-left').text %>
+                                            </small>
+                                            <% end %>
+                                        </p>
+                                        <p class="card-text text-muted">
                                             <%# product location%>
                                             <% if product.at_css('.s-item__info .s-item__location')%>
-                                                <small>
-                                                    <%= product.at_css('.s-item__info .s-item__location').text %>
-                                                </small>
+                                            <small>
+                                                <%= product.at_css('.s-item__info .s-item__location').text %>
+                                            </small>
                                             <% end %>
-                                            </p>
-                                        </div>
+                                        </p>
                                     </div>
-                                    <a href="#" class="btn btn-primary mt-3">Display</a>
                                 </div>
+                                <a href="" class="btn btn-primary mt-3">Display</a>
                             </div>
                         </div>
                     </div>
+                </div>
                 <%end%>
                 <%# Card content --- End here --- %>
             </div>

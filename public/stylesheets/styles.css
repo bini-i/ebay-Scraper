@@ -7847,27 +7847,28 @@ a.text-dark:hover, a.text-dark:focus {
       .hero .overlay .content h1 {
         font-size: 4rem;
         text-align: center; }
-      .hero .overlay .content form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative; }
-        .hero .overlay .content form .form-group {
-          flex-grow: 1;
-          height: 3rem;
-          display: grid;
-          place-items: center; }
-          .hero .overlay .content form .form-group #product_name {
-            width: 100%;
-            height: 100%;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0; }
-        .hero .overlay .content form .btn {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0; }
-        .hero .overlay .content form .bi-search {
-          position: absolute;
-          right: 8px; }
+
+body .container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  body .container form .form-group {
+    flex-grow: 1;
+    height: 3rem;
+    display: grid;
+    place-items: center; }
+    body .container form .form-group #product_name {
+      width: 100%;
+      height: 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+  body .container form .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  body .container form .bi-search {
+    position: absolute;
+    right: 8px; }
 
 .s-result {
   border: 1px solid rgba(0, 0, 0, 0.125); }
