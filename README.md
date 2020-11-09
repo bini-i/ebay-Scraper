@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Best ebay deals
 
-> One paragraph statement about the project.
+> This project is a scraper for [ebay](https://ebay.com) website based on filters provided by the user.
 
 ![screenshot](./app_screenshot.png)
 
@@ -10,13 +10,14 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- Sinatra
+- HTML5
+- Sass
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://bayhunt.herokuapp.com/)
 
 
 ## Getting Started
@@ -59,9 +60,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- ebay
 
 ## 📝 License
 
