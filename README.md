@@ -2,11 +2,13 @@
 
 # Best ebay deals
 
-> This project is a scraper for [ebay](https://ebay.com) website based on filters provided by the user.
+> This project is a scraper for products on [ebay](https://ebay.com), with auction ending in less than 24hrs
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+The project uses open-uri to open http request to a customized ebay web address and creats a Nokogiri object based on the HTML parsed from the address.
+- also fetches more HTML by updating the page number query string.
+- once done with fetching, serves a search result page with ebay products filtered to have auction ending in less than 24hrs.
 
 ## Built With
 
@@ -14,32 +16,11 @@ Additional description about the project and its features.
 - Sinatra
 - HTML5
 - Sass
+- bootstrap
 
 ## Live Demo
 
 [Live Demo Link](https://bayhunt.herokuapp.com/)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
 
 
 ## Authors
@@ -61,6 +42,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - ebay
+- Nokogiri
 
 ## 📝 License
 

@@ -4,11 +4,15 @@ class Scraper
     @base_url_right = url_right
   end
 
-  def url_constructor(product_name)
+  def construct_url(product_name)
     arr = product_name.split()
     product_name = arr.join('+')
     url = @base_url_left + product_name + @base_url_right
     url
+  end
+
+  def modify_url(url, pg_num) 
+    url << "&_pgn=#{pg_num}"
   end
 
   def scrape(url)
