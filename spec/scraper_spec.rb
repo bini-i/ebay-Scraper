@@ -1,10 +1,8 @@
-require 'nokogiri'
-require 'open-uri'
 require_relative '../lib/scraper.rb'
 
 describe Scraper do
   subject { Scraper.new('https://ebay', '.com') }
-  let (:url) { 'https://www.ebay.com/sch/i.html?_from=R40&_nkw=watch' }
+  let(:url) { 'https://www.ebay.com/sch/i.html?_from=R40&_nkw=watch' }
   describe '#initialize' do
     it 'initializes @base_url_left' do
       expect(subject.base_url_left).to eq('https://ebay')

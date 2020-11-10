@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 0rem; }
+  margin-bottom: 0; }
 
 abbr[title],
 abbr[data-original-title] {
@@ -7853,12 +7853,14 @@ body .container form {
   justify-content: center;
   align-items: center;
   position: relative; }
-  body .container form .form-group {
+  body .container form .form-group,
+  body .container form .custom-select {
     flex-grow: 1;
     height: 3rem;
     display: grid;
     place-items: center; }
-    body .container form .form-group #product_name {
+    body .container form .form-group #product_name,
+    body .container form .custom-select #product_name {
       width: 100%;
       height: 100%;
       border-top-right-radius: 0;

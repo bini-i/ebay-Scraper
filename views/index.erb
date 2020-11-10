@@ -22,6 +22,17 @@
                             <input id="product_name" name="product_name" class="form-control" type="text"
                                 placeholder="Search for products here">
                         </div>
+                        <select name='page_number' class="custom-select">
+                            <option selected>Page size to scrape</option>
+                            <option disabled>Note: higher size takes longer</option>
+                            <option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
                         <input class="btn btn-lg btn-primary" type="submit" value="Search">
                     </form>
                 </div>

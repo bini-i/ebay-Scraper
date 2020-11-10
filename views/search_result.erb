@@ -22,11 +22,22 @@
                         <input id="product_name" name="product_name" class="form-control" type="text"
                             placeholder="Search for products here" value="<%= params['product_name'] || ""%>">
                     </div>
+                    <select name='page_number' class="custom-select">
+                            <option selected>Page size to scrape</option>
+                            <option disabled>Note: higher size takes longer</option>
+                            <option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
                     <input class="btn btn-lg btn-primary" type="submit" value="Search">
                 </form>
                 <%# Card content --- Start here --- %>
                 <% @products.each do |product| %>
-                    <% if !/d/.match(product.at_css('.s-item__info .s-item__time-left')) %>
+                    <% if !/d/.match(product.at_css('.s-item__info .s-item__time-left')) && /m/.match(product.at_css('.s-item__info .s-item__time-left'))%>
                         <div class="card py-2">
                             <div class="row no-gutters">
                                 <div class="col-sm-4 img-container">

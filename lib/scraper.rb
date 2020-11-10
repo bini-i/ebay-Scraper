@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 class Scraper
   attr_accessor :base_url_left, :base_url_right
 
@@ -14,7 +17,7 @@ class Scraper
   end
 
   def modify_url(url, pg_num)
-    url << "&_pgn=#{pg_num}"
+    url + "&_pgn=#{pg_num}"
   end
 
   def scrape(url)
