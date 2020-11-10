@@ -7885,7 +7885,9 @@ body .container form {
         width: 100%;
         height: 100%;
         object-fit: contain; }
-    .s-result .card .price {
+    .s-result .card .card-body .card-title {
+      font-size: 1rem; }
+    .s-result .card .card-body .price {
       font-size: 1.25rem; }
 
 /*# sourceMappingURL=styles.css.map */
