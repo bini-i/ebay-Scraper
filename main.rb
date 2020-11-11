@@ -21,7 +21,8 @@ class App < Sinatra::Base
     pg_num = 1
 
     page_number_set = params['page_number'].to_i
-
+    page_number_set = 1 if page_number_set == 0
+    
     loop do
       new_url = sc.modify_url(url, pg_num)
       begin

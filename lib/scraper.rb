@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class Scraper
-  attr_accessor :base_url_left, :base_url_right
+  attr_reader :base_url_left, :base_url_right
 
   def initialize(url_left, url_right)
     @base_url_left = url_left

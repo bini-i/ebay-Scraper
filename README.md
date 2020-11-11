@@ -22,6 +22,66 @@ The project uses open-uri to open http request to a customized ebay web address 
 
 [Live Demo Link](https://bayhunt.herokuapp.com/)
 
+## How to use thie repo?
+
+## option 1 (using the live site)
+
+- step:1 go to the link below
+```
+https://bayhunt.herokuapp.com/
+```
+- step:2 you will be presented with a page that looks like this
+
+![screenshot](./assets/img/app_screenshot2.png)
+
+- step:3 type the product you want to search in the input field, select an optional page size for scraping and click on the search button
+
+![screenshot](./assets/img/app_screenshot3.png)
+
+- step:4 your result will be presented as shown below
+
+![screenshot](./assets/img/app_screenshot4.png)
+
+## option 2 (run on local machine)
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- ruby
+- nokogiri
+- sinatra
+
+### Install
+```
+gem install ruby 
+```
+```
+gem install nokogiri
+```
+```
+gem install sinatra
+```
+
+### Setup
+
+- clone the repository, and open the repo in terminal
+- run bundler to get all the necessary gems
+```
+bundle install
+```
+- start the webserver using rackup
+```
+rackup -p 4567
+```
+
+### Usage
+
+- open a browser, and navigate to
+```
+http://localhost:4568/
+```
+- follow the steps in option 1 starting from step 2
 
 ## Authors
 

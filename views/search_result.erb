@@ -96,7 +96,7 @@
                                                     <p class="card-text text-muted">
                                                         <%# bidding time left%>
                                                         <% if product.at_css('.s-item__info .s-item__time-left') %>
-                                                        <small>
+                                                        <small class='text-danger'>
                                                             <%= product.at_css('.s-item__info .s-item__time-left').text %>
                                                         </small>
                                                         <% end %>
