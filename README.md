@@ -84,7 +84,7 @@ http://localhost:4568/
 - follow the steps in option 1 starting from step 2
 
 ## Tests
-- on the root path of the repo, run the following command
+- You can run the tests provided under spec/scraper_spec.rb by running the following command on the root path of the repo.
 ```
 rspec
 ```
