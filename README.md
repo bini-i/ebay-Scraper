@@ -4,7 +4,7 @@
 
 > This project is a scraper for products on [ebay](https://ebay.com), with auction ending in less than 24hrs
 
-![screenshot](./app_screenshot.png)
+![screenshot](./assets/img/app_screenshot.png)
 
 The project uses open-uri to open http request to a customized ebay web address and creats a Nokogiri object based on the HTML parsed from the address.
 - also fetches more HTML by updating the page number query string.

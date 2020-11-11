@@ -3,9 +3,7 @@ require 'httparty'
 require 'open-uri'
 require 'sinatra'
 require_relative './lib/scraper'
-# require 'byebug'
 
-# routes
 class App < Sinatra::Base
   get '/' do
     erb :index
@@ -21,7 +19,7 @@ class App < Sinatra::Base
 
     @products_arr = [sc.scrape(url)]
     pg_num = 1
-    # debugger
+
     page_number_set = params['page_number'].to_i
 
     loop do
@@ -29,7 +27,7 @@ class App < Sinatra::Base
       begin
         result = sc.scrape(new_url)
       rescue StandardError => e
-        p "#{e} handled"
+        p "#{e.message} handled"
         break
       end
 
