@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bayhunt</title>
+    <link rel="stylesheet" type="text/css" href="<%=url('stylesheets/styles.css')%>">
+    <script src="https://kit.fontawesome.com/2bce053742.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="overlay">
+                <div class="content px-2">
+                    <h1>Filter <span class='text-danger'>e</span><span class='text-primary'>b</span><span
+                            class='text-warning'>a</span><span class='text-success'>y</span> products</h1>
+                    <p class='lead'>with auction ending in less than 24hrs</p>
+                    <form method="POST" action="/search" class="form-inline mt-3">
+                        <div class="form-group mb-0">
+                            <input required id="product_name" name="product_name" class="form-control" type="text"
+                                placeholder="Search for products here">
+                        </div>
+                        <select name='page_number' class="custom-select">
+                            <option selected>Page size to scrape</option>
+                            <option disabled>Note: higher size takes longer</option>
+                            <option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
+                        <input class="btn btn-lg btn-primary" type="submit" value="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
