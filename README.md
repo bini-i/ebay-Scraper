@@ -83,13 +83,19 @@ http://localhost:4568/
 ```
 - follow the steps in option 1 starting from step 2
 
+## Tests
+- on the root path of the repo, run the following command
+```
+rspec
+```
+
 ## Authors
 
 👤 **Binyam Hailemeskel**
 
 - GitHub: [@bini-i](https://github.com/bini-i)
 - Twitter: [@binyamshewa](https://twitter.com/binyamshewa)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/bini-i/)
+- LinkedIn: [binyam hailemeskel](https://www.linkedin.com/in/bini-i/)
 
 ## 🤝 Contributing
 

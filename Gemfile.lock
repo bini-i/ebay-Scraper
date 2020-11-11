@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.1)
+    diff-lcs (1.4.4)
     ffi (1.13.1)
     httparty (0.18.1)
       mime-types (~> 3.0)
@@ -28,6 +29,19 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.4)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.0)
     rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -58,6 +72,7 @@ DEPENDENCIES
   httparty
   nokogiri
   open-uri
+  rspec
   rubocop (~> 0.81.0)
   sass
   sinatra
