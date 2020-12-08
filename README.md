@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Best ebay deals
+# Ebay Scraper
 
 > This project is a scraper for products on [ebay](https://ebay.com), with auction ending in less than 24hrs
 
